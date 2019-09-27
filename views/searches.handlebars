@@ -1,0 +1,341 @@
+<nav class="navbar navbar-expand-lg navbar-light alert-danger py-5">
+
+    {{!-- Navbar Title --}}
+    <ul class="nav-item">
+
+        <li class="nav-link h2" href="/">RxMate</li>
+
+    </ul>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+        <span class="navbar-toggler-icon"></span>
+
+    </button>
+
+    {{!-- Navbar Links --}}
+    <div class="collapse navbar-collapse justify-content-end mr-5" id="navbarNav">
+
+        <ul class="navbar-nav">
+
+            <li class="nav-item">
+                <a class="nav-link h4" href="/">Create User</a>
+            </li>
+
+            <li class="nav-item active">
+                <a class="nav-link h4" href="/search">Prescriptions <span class="sr-only">(current)</span></a>
+            </li>
+
+            <li class="nav-item">
+                <p class="nav-link" id = "clock" href =""></p>
+            </li>
+
+        </ul>
+
+    </div>
+
+</nav>
+
+{{!-- Input Form --}}
+
+    {{!-- Accordion --}}
+<div class="accordion mb-3 shadow" id="form-accordion">
+
+    <div class="card">
+        <div class="card-header alert-info" id="accordion-header">
+            <h2 class="mb-0 text-center">
+                <button class="btn btn-outline-info btn-lg" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Create Prescription</button>
+            </h2>
+        </div>
+
+        <div id="collapseOne" class="collapse hide">
+            <div class="card-body alert-secondary">
+        
+                <div class="container">
+                    <h1 class="h2 mb-4">Add Prescription</h1>
+
+                    <form>
+
+                        {{!-- Prescription for --}}
+                        <div class="form-inline">
+                            <div class="row w-100 mb-4 h5">
+
+                                <div class="col-sm-4 text-center">
+
+                                    <label for="prescriptionFor">Prescription for:</label>
+
+                                </div>
+
+                                <div class="col-sm">
+                                    <select class="form-control col-sm w-50" id="prescriptionFor">
+
+                                        {{#each Users}}
+
+                                            <option value="{{id}}">{{username}}</option>
+
+                                        {{/each}}
+
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        {{!-- Medicine name --}}
+                        <div class="form-inline">
+                            <div class="row w-100 mb-4 h5">
+
+                                <div class="col-sm-4 text-center">
+                                    <label for="medicine-name">Prescription Name:</label>
+                                </div>
+
+                                <div class="col-sm">
+                                    <input type="text" class="form-control col-sm w-50" id="medicine-name" placeholder="Medicine name...">
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        {{!-- Radio Buttons --}}
+                        <div class="row w-100 mb-4 h5">
+
+                            <div id="meds-radio-switch" class="col-sm-4 text-center">
+
+                                <div class="custom-control custom-radio custom-control-inline">
+
+                                    <input type="radio" id="meds-type-pills" name="medicine-switch" class="custom-control-input" value="false">
+                                    <label class="custom-control-label" for="meds-type-pills">Pills</label>
+
+                                </div>
+
+                                <div class="custom-control custom-radio custom-control-inline">
+
+                                    <input type="radio" id="meds-type-liquid" name="medicine-switch" class="custom-control-input" value="false">
+                                    <label class="custom-control-label" for="meds-type-liquid">Liquid</label>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        {{!-- Pills Quantity --}}
+                        <div class="form-inline d-none"  id="pill-quantity-div">
+
+                            <div class="row w-100 mb-4 h5">
+
+                                <div class="col-sm-4">
+
+                                    <label class="" for="medicine-amount">Quantity per dose:</label>
+
+                                </div>
+                                
+                                <div class="col-sm-1">
+                                    
+                                    <input class="form-control w-100" type="number" id="medicine-pill-quantity">
+
+                                </div>
+
+                            </div>
+
+                            {{!-- Frequency --}}
+                            <div class="row w-100 mb-4 h5">
+
+                                {{!-- Frequency Number --}}
+                                <div class="col-sm-4">
+
+                                    <label for="medicine-pill-frequency">Take: </label>
+
+                                </div>
+
+                                <div class="col-sm-1">
+
+                                    <input type="number" class="form-control w-100" id="medicine-pill-frequency">
+
+                                </div>
+
+                                {{!-- Frequency Unit --}}
+                                <div class="col-sm-2">
+
+                                    <label for="medicine-pill-frequencyUnit">Every: </label>
+
+                                </div>
+
+                                <div class="col-sm">
+                                    
+                                    <select name="" id="medicine-pill-frequencyUnit" class="custom-select">
+                                        <option value="Minute">Minute</option>
+                                        <option value="Hour(s)">Hour(s)</option>
+                                        <option value="Day">Day</option>
+                                        <option value="Week">Week</option>
+                                        <option value="Fortnite">Fortnite</option>
+                                        <option value="Month(s)">Month(s)</option>
+                                        <option value="Year">Year</option>
+                                    </select>
+                                    
+                                </div>
+
+                            </div>
+                        </div>
+
+                        {{!-- Liquid Quantity --}}
+                        <div class="form-inline d-none" id="liquid-quantity-div">
+
+                            <div class="row w-100 mb-4 h5" >
+
+                                <div class="col-sm-4">
+
+                                    <label class="" for="medicine-amount">Quantity per dose:</label>
+
+                                </div>
+
+                                <div class="col-sm-1">
+
+                                    <input class="form-control w-100" type="number" id="medicine-liquid-quantity">
+
+                                </div>
+
+                                {{!-- Liquid Units --}}
+                                <div class="col-sm-2">
+
+                                    <label class="" for="medicine-liquid-units">Units:</label>
+
+                                </div>
+
+                                {{!-- Units --}}
+                                <div class="col-sm">
+
+                                    <select class="custom-select" id="medicine-liquid-units">
+
+                                        <option selected value="ml">ml</option>
+                                        <option value="tsp">tsp</option>
+
+                                    </select>
+
+                                </div>
+                            </div>
+
+                            <div class="row w-100 mb-5 h5">
+
+
+                                {{!-- Frequency Number --}}
+                                <div class="col-sm-4">
+
+                                    <label for="medicine-liquid-frequency">Take: </label>
+
+                                </div>
+
+                                <div class="col-sm-1">
+
+                                    <input type="number" class="form-control w-100" id="medicine-liquid-frequency">
+
+                                </div>
+
+                                {{!-- Frequency Unit --}}
+                                <div class="col-sm-2">
+
+                                    <label for="medicine-liquid-frequencyUnit">Every: </label>
+
+                                </div>
+
+                                <div class="col-sm">
+                                    
+                                    <select name="" id="medicine-liquid-frequencyUnit" class="custom-select">
+                                        <option value="Minute">Minute</option>
+                                        <option value="Hour(s)">Hour(s)</option>
+                                        <option value="Day">Day</option>
+                                        <option value="Week">Week</option>
+                                        <option value="Fortnite">Fortnite</option>
+                                        <option value="Month(s)">Month(s)</option>
+                                        <option value="Year">Year</option>
+                                    </select>
+                                    
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="form-inline">
+
+                            <div class="col-sm-4 text-center mb-4 h5">
+
+                                <label for="medicine-comments">Comments</label>
+
+                            </div>
+                            
+                            <textarea class="form-control w-100 col-sm-4" id="medicine-comments" rows="3"></textarea>
+
+                        </div>
+
+                        <div class="row justify-content-end">
+
+                            <button type="submit" id="form-submit" class="btn btn-primary my-1 rounded-pill">Submit</button>
+
+                        </div>
+
+                    </form>
+                    
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{{!-- Search Results --}}
+<div class="container">
+    <div class="jumbotron pt-4 shadow">
+
+        <div class="row">
+
+            <h1 class="h1">Prescriptions</h1>
+            
+        </div>
+        
+        <div class="row mb-4">
+
+            <p>Select a username to display their prescriptions.</p>
+
+        </div>
+
+        {{!-- Users row --}}
+        <div class="row">
+            
+            <div class="btn-group w-100 mb-4">
+
+
+                <select id="dropdown-select" class="btn btn-secondary btn-lg shadow">
+
+                    {{#each Users}}
+
+                        <option class="rounded" value="{{username}}">{{username}}</option>
+
+                    {{/each}}
+                     
+                </select>
+
+            </div>
+        </div>
+        
+        {{!-- Prescription cards --}}
+        <div class="row">
+
+            {{#each RXCard}}
+                <div class="card shadow-sm" style="width: 18rem;">
+
+                    <div class="card-body">
+                        <h5 class="card-title">{{name}}</h5>
+                        <p class="card-text">Take {{frequencyUnit}} every {{frequency}}</p>
+                        <p class="card-text">{{comments}}</p>
+                    </div>
+
+                    {{!-- {{> schedule-block }} --}}
+                </div>
+            {{/each}}
+
+        </div>
+
+    </div>
+</div>
