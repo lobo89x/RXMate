@@ -295,28 +295,28 @@ function getFormInput(userInput) {
 
         console.log("Start pill capture");
 
-        // Pill Prescription
-        var schedule = {
+        // // Pill Prescription
+        // var schedule = {
 
-            // Medicine type, quantity per dose, frequency of dose
-            name: prescriptionName
-                .val()
-                .trim(),
-            frequency: pillFrequency
-                .val()
-                .trim(),
-            frequencyUnit: pillFrequencyUnit
-                .val()
-                .trim(),
+        //     // Medicine type, quantity per dose, frequency of dose
+        //     name: prescriptionName
+        //         .val()
+        //         .trim(),
+        //     frequency: pillFrequency
+        //         .val()
+        //         .trim(),
+        //     frequencyUnit: pillFrequencyUnit
+        //         .val()
+        //         .trim(),
 
-            comments: prescriptionComments
-                .val()
-                .trim(),
-            UserId: prescriptionFor
-                .val()
-                .trim()
+        //     comments: prescriptionComments
+        //         .val()
+        //         .trim(),
+        //     UserId: prescriptionFor
+        //         .val()
+        //         .trim()
             
-        }
+        // }
 
         var prescription = {
 
@@ -346,10 +346,8 @@ function getFormInput(userInput) {
 
         }
 
-        userInput = {
-            input: {schedule, 
-            prescription}
-        }
+        userInput = prescription;
+        
 
         console.log("User input");
         console.log(JSON.stringify(userInput));
@@ -366,29 +364,29 @@ function getFormInput(userInput) {
 
         console.log("Start liquid capture");
 
-        // Liquid Prescription
-        var schedule = {
+        // // Liquid Prescription
+        // var schedule = {
 
-            // Liquid time units
-            name: prescriptionName
-                .val()
-                .trim(),
-            frequency: liquidFrequency
-                .val()
-                .trim(),
-            frequencyUnit: liquidFrequencyUnit
-                .val()
-                .trim(),
+        //     // Liquid time units
+        //     name: prescriptionName
+        //         .val()
+        //         .trim(),
+        //     frequency: liquidFrequency
+        //         .val()
+        //         .trim(),
+        //     frequencyUnit: liquidFrequencyUnit
+        //         .val()
+        //         .trim(),
 
-            comments: prescriptionComments
-                .val()
-                .trim(),
+        //     comments: prescriptionComments
+        //         .val()
+        //         .trim(),
 
-            UserId: prescriptionFor
-                .val()
-                .trim()
+        //     UserId: prescriptionFor
+        //         .val()
+        //         .trim()
             
-        }
+        // }
 
         var prescription = {
 
@@ -426,7 +424,7 @@ function getFormInput(userInput) {
         console.log(JSON.stringify(userInput));
 
         console.log("newSchedule");
-        console.log(JSON.stringify(userInput.newSchedule));
+        // console.log(JSON.stringify(userInput.newSchedule));
 
         console.log("newPrescription");
         console.log(JSON.stringify(userInput.newPrescription));
