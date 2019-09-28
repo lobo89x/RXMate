@@ -4,7 +4,7 @@
   "description": "An app to manage prescriptions",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node server.js"
   },
   "license": "ISC",
   "dependencies": {
