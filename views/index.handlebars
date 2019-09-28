@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light alert-danger py-5 mb-5">
+<nav class="navbar navbar-expand-lg navbar-light alert-danger py-5 mb-5 shadow">
 
     {{!-- Navbar Title --}}
     <ul class="nav-item">
@@ -14,7 +14,7 @@
     </button>
 
     {{!-- Navbar Links --}}
-    <div class="collapse navbar-collapse d-flex justify-content-end mr-5" id="navbarNav">
+    <div class="collapse navbar-collapse justify-content-end mr-5" id="navbarNav">
 
         <ul class="navbar-nav">
 
@@ -27,7 +27,7 @@
             </li>
 
             <li class="nav-item">
-                <p class="nav-link" id = "clock" href =""></p>
+                <p class="nav-link" id = "clock"></p>
             </li>
         </ul>
 
@@ -37,80 +37,96 @@
 
 {{!-- Body Content --}}
 <div class="container">
-    <div class="jumbotron alert-info">
+    <div class="jumbotron alert-info shadow rounded-pill pl-5" id="signup-jumbo">
 
-        <h1 class="h1 mb-5">Sign-Up Here!</h1>
+        <div class="row col-lg w-100">
 
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signupModal">
-            Sign-Up!
-        </button>
+            <div class="col-md-6">
 
-        <!-- Sign-Up Modal -->
-        <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+                <h1 class="h1 mb-5 ml-5">Sign-Up Here!</h1>
 
-            <div class="modal-dialog" role="document">
+            </div>
 
-                <div class="modal-content">
+            <div class="col-md-6 pt-5">
+                <p>Welcome to RxMate! Here you can better manager you daily prescriptions. The page will reload on a successful submisison.</p>
+            </div>
 
-                    {{!-- Modal Button --}}
-                    <div class="modal-header">
+            <div class="col-sm-3">
 
-                        <h5 class="modal-title" id="signupModalLabel">Sign-Up</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary rounded-pill ml-5" data-toggle="modal" data-target="#signupModal">
+                    Sign-Up!
+                </button>
 
-                    </div>
+            </div>
 
-                    <div class="modal-body">
+            <!-- Sign-Up Modal -->
+            <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
 
-                        {{!-- Sign-Up Form --}}
-                        <form>
+                <div class="modal-dialog" role="document">
 
-                            <div class="form-row">
+                    <div class="modal-content">
 
-                                {{!-- Username --}}
-                                <div class="form-group col-md-6">
+                        {{!-- Modal Button --}}
+                        <div class="modal-header">
 
-                                    <label for="signup-username">Username</label>
-                                    <input type="text" class="form-control" id="signup-username" placeholder="Username">
-                                    
+                            <h5 class="modal-title" id="signupModalLabel">Sign-Up</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+
+                        </div>
+
+                        <div class="modal-body">
+
+                            {{!-- Sign-Up Form --}}
+                            <form>
+
+                                <div class="form-row">
+
+                                    {{!-- Username --}}
+                                    <div class="form-group col-md-6">
+
+                                        <label for="signup-username">Username</label>
+                                        <input type="text" class="form-control" id="signup-username" placeholder="Username">
+                                        
+                                    </div>
+
+                                    {{!-- Email --}}
+                                    <div class="form-group col-md-6">
+
+                                        <label for="signup-email">Email</label>
+                                        <input type="email" class="form-control" id="signup-email" placeholder="Email">
+                                        
+                                    </div>
+
+                                    {{!-- Password --}}
+                                    <div class="form-group col-md-6">
+
+                                        <label for="signup-pw">Password</label>
+                                        <input type="password" class="form-control" id="signup-pw" placeholder="Password">
+
+                                    </div>
+
                                 </div>
 
-                                {{!-- Email --}}
-                                <div class="form-group col-md-6">
+                                {{!-- Age --}}
+                                <div class="form-row">
 
-                                    <label for="signup-email">Email</label>
-                                    <input type="email" class="form-control" id="signup-email" placeholder="Email">
-                                    
-                                </div>
+                                    <div class="form-group col-md-6">
 
-                                {{!-- Password --}}
-                                <div class="form-group col-md-6">
+                                        <label for="signup-age">Age</label>
+                                        <input type="number" class="form-control w-25" id="signup-age">
 
-                                    <label for="signup-pw">Password</label>
-                                    <input type="password" class="form-control" id="signup-pw" placeholder="Password">
+                                    </div>
 
                                 </div>
 
-                            </div>
+                                <button id="signup-submit" type="submit" class="btn btn-primary mb-5 rounded-pill">Submit</button>
 
-                            {{!-- Age --}}
-                            <div class="form-row">
+                            </form>
 
-                                <div class="form-group col-md-6">
-
-                                    <label for="signup-age">Age</label>
-                                    <input type="number" class="form-control w-25" id="signup-age">
-
-                                </div>
-
-                            </div>
-
-                            <button id="signup-submit" type="submit" class="btn btn-primary mb-5">Submit</button>
-
-                        </form>
+                        </div>
 
                     </div>
 
@@ -118,10 +134,8 @@
 
             </div>
 
-        </div>
+        
 
-        <div class="row pt-5">
-            <p>Welcome to RxMate! Here you can better manager you daily prescriptions. The page will reload on a successful submisison.</p>
         </div>
 
     </div>
