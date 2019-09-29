@@ -4,6 +4,7 @@
   "description": "An app to manage prescriptions",
   "main": "server.js",
   "scripts": {
+    "prestart": "next build",
     "start": "node server.js",
     "lint": "eslint --quiet .",
     "fix": "eslint --fix .",
