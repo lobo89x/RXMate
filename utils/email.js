@@ -1,6 +1,6 @@
 var nodemailer = require('nodemailer');
 // for nodemailer self signed cerificate
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+process.env.NODE_TLS_REJECT_UNAUTHORIZED =  process.env.PORT || 0; 
 
 
 console.log('trying to send email');
