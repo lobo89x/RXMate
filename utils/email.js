@@ -16,7 +16,7 @@ var transporter = nodemailer.createTransport(
   });
 
 
-  db.students.update({_id : ObjectId("5d9104c3ad9ebba171e41107")},{$set: {shredder: true}})
+
 
 
 
